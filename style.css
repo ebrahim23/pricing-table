@@ -1,0 +1,163 @@
+/* Color */
+:root {
+    --first-color: hsl(240, 78%, 98%);
+    --second-color: hsl(234, 14%, 74%);
+    --third-color: hsl(233, 13%, 49%);
+    --fourth-color: hsl(232, 13%, 33%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--first-color);
+    position: relative;
+}
+body:before {
+    content: '';
+    width: 25%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url(./images/bg-top.svg);
+}
+body:after {
+    content: '';
+    width: 26%;
+    height: 46%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: url(./images/bg-bottom.svg);
+}
+h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: var(--fourth-color);
+}
+.change {
+    margin-bottom: 60px;
+    color: var(--second-color);
+    display: flex;
+}
+.change input {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    border-radius: 20px;
+    margin: 0 10px;
+    appearance: none;
+    background: linear-gradient(
+        to right,
+        hsl(236, 72%, 79%), hsl(237, 63%, 64%)
+    );
+    transform: translate(-5px, -5px);
+    margin-left: 20px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
+    outline: none;
+    transition: .5s;
+}
+.change input:before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 20px;
+    top: 2px;
+    left: 4px;
+    background-color: #FFF;
+    transform: scale(1.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    transition: .5s;
+}
+input:checked[type="checkbox"]:before {
+    left: 32px;
+}
+input:checked[type="checkbox"] > .plan .card .price1 {
+    display: none;
+}
+
+
+.plan {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    z-index: 99;
+}
+.plan .card {
+    background-color: #FFF;
+    padding: 20px;
+    text-align: center;
+    line-height: 2;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, .1);
+    margin: auto;
+    margin-bottom: 50px;
+}
+.plan .card h3 {
+    color: var(--fourth-color);
+}
+.plan .card .price1 {
+    display: block;
+    font-size: 50px;
+}
+.plan .card .price2 {
+    display: none;
+    font-size: 50px;
+}
+.show-hide .price1 {
+    display: none !important;
+}
+.show-hide .price2 {
+    display: block !important;
+}
+.plan .card .feat {
+    color: var(--fourth-color);
+    font-size: 14px;
+}
+.plan .card hr {
+    opacity: .4;
+}
+.plan .card .btn {
+    text-decoration: none;
+    color: #FFF;
+    display: block;
+    text-align: center;
+    letter-spacing: 1px;
+    background: linear-gradient(
+        to right,
+        hsl(236, 72%, 79%), hsl(237, 63%, 64%)
+    );
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.plan .second {
+    background: linear-gradient(
+        to right,
+        hsl(236, 72%, 79%), hsl(237, 63%, 64%)
+    );
+    color: #FFF;
+    transform: scale(1.15);
+}
+.plan .second .feat, .plan .second h3 {
+    color: var(--first-color);
+}
+.plan .second h3 {
+    padding-top: 60px;
+}
+.plan .second .btn {
+    background: #FFF;
+    color: hsl(237, 63%, 64%);
+}
